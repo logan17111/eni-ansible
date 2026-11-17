@@ -1,0 +1,11 @@
+---
+- name: Installer un paquet via apt
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Installer le paquet
+      ansible.builtin.apt:
+        name: curl
+        state: present
+        update_cache: true
